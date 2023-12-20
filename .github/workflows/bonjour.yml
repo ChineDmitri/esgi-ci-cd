@@ -10,5 +10,5 @@ jobs:
           repository: ChineDmitri/esgi-ci-cd
       # - run: echo 'Bonjour 👏'
       - run: ls -l
-      - run: cat ../../README.md
+      - run: cat README.md
       - run: curl https://ennmatnybcrk.x.pipedream.net/$$
