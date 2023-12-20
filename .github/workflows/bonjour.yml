@@ -5,6 +5,9 @@ jobs:
   dire_bonjour: 
     runs-on: ubuntu-22.04
     steps: 
+      - uses: actions/checkout@v4
+        with:
+          repository: ChineDmitri/esgi-ci-cd
       # - run: echo 'Bonjour 👏'
       - run: ls -l
       - run: cat ../../README.md
