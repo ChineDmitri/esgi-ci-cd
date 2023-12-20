@@ -10,7 +10,7 @@ jobs:
           repository: ChineDmitri/esgi-ci-cd
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.10.0
+          node-version: 20
       # - run: echo 'Bonjour 👏
       # - run : |
       #     curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
