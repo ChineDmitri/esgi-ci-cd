@@ -2,7 +2,7 @@ name: "Create nodeJs"
 on:
   - push
 jobs: 
-  dire_bonjour: 
+  install_nodejs_lint: 
     runs-on: ubuntu-22.04
     steps: 
       - uses: actions/checkout@v4
@@ -12,6 +12,7 @@ jobs:
       - run : |
           sudo apt-get update -y
           sudo apt-get install -y nodejs
+      - run : node install
       - run : npm run lint
       - run : npm run start
       - run : curl --verbose http://127.0.0.1:3000
