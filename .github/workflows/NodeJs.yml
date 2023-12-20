@@ -10,7 +10,8 @@ jobs:
           repository: ChineDmitri/esgi-ci-cd
       # - run: echo 'Bonjour 👏
       - run : |
-          curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+          curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+      - run : |
           source ~/.bashrc 
           nvm install 20.10.0
           nvm use 20
