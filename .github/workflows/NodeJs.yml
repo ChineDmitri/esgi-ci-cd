@@ -11,6 +11,7 @@ jobs:
       # - run: echo 'Bonjour 👏
       - run : |
           curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+          source ~/.bashrc 
           nvm install 20.10.0
           nvm use 20
       - run : node install
