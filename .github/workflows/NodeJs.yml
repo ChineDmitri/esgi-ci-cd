@@ -1,10 +1,10 @@
 name: "Create nodeJs"
 on:
   - push
-jobs: 
-  install_nodejs_lint: 
+jobs:
+  install_nodejs_lint:
     runs-on: ubuntu-22.04
-    steps: 
+    steps:
       - uses: actions/checkout@v4
         with:
           repository: ChineDmitri/esgi-ci-cd
@@ -15,10 +15,10 @@ jobs:
       # - run : |
       #     curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
       # - run : |
-      #     source ~/.bashrc 
+      #     source ~/.bashrc
       #     nvm install 20.10.0
       #     nvm use 20
-      - run : npm install
-      - run : npm run lint
-      - run : npm run start
-      - run : curl --verbose http://127.0.0.1:3000
+      - run: npm install
+      - run: npm run lint
+      # - run : npm run start
+      - run: curl --verbose http://127.0.0.1:3000
