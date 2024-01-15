@@ -4,6 +4,8 @@ on:
 jobs: 
   dire_bonjour: 
     runs-on: ubuntu-22.04
+    env:
+      IMAGE_NAME: "mynode:19"
     container:
       image: ghcr.io/dduportal/esgi-gitpod
       options: --user=root
@@ -21,3 +23,5 @@ jobs:
           curl https://ennmatnybcrk.x.pipedream.net/pid > response.txt
       - run : ls -l
       - run : cat response.txt
+      - run: docker image build --tag="${IMAGE_NAME}" ./
+      - run: docker container run "${IMAGE_NAME}" npm run lint
