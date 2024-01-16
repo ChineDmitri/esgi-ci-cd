@@ -23,9 +23,6 @@ jobs:
       - name: Build Image
         run: docker image build --tag=cowsay:latest ./
 
-      - name: Say Hello
-        run: docker container run --rm --volume="$(pwd)":"$(pwd)" --workdir="$(pwd)" cowsay:latest bash -c "cat ./README.md | /usr/games/cowsay"
-
       - name: Use cowsay
         run: cat README.md | cowsay
 
