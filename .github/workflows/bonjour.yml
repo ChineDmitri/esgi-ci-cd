@@ -19,8 +19,9 @@ jobs:
           sudo apt-get install -y cowsay
       - name: "Build Image"
         run: docker image build --tag=cowsay:latest ./
-      - name: "Say Hello"
+     - name: "Say Hello"
         run: docker container run --rm --volume="$(pwd)":"$(pwd)" --workdir="$(pwd)" cowsay:latest bash -c "cat ./README.md | /usr/games/cowsay"
+
       - run : cat README.md | cowsay
       - run : cat README.md | cowsay
       # - run : |
