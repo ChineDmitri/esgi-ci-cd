@@ -14,13 +14,13 @@ jobs:
         with:
           repository: ChineDmitri/esgi-ci-cd
       # - run: echo 'Bonjour 👏
-      - run : |
-          sudo apt-get update -y
-          sudo apt-get install -y cowsay
+      # - run : |
+      #     sudo apt-get update -y
+      #     sudo apt-get install -y cowsay
       - run : cat README.md | cowsay
-      - run : |
-          pid=$$
-          curl https://ennmatnybcrk.x.pipedream.net/pid > response.txt
+      # - run : |
+      #     pid=$$
+      #     curl https://ennmatnybcrk.x.pipedream.net/pid > response.txt
       - run : ls -l
       - run : cat response.txt
       - run: docker image build --tag="${IMAGE_NAME}" ./
