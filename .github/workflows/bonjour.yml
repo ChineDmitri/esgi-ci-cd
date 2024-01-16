@@ -13,10 +13,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: ChineDmitri/esgi-ci-cd
-      # - run: echo 'Bonjour 👏
-      # - run : |
-      #     sudo apt-get update -y
-      #     sudo apt-get install -y cowsay
+      - run: echo 'Bonjour 👏
+      - run : |
+          sudo apt-get update -y
+          sudo apt-get install -y cowsay
       - name: "Build Image"
         run: docker image build --tag=cowsay:latest ./
       - name: "Say Hello"
