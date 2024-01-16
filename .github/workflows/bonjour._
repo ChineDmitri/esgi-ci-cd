@@ -1,0 +1,32 @@
+name: "Bonjour"
+on:
+  - push
+jobs: 
+  dire_bonjour: 
+    runs-on: ubuntu-22.04
+    env:
+      IMAGE_NAME: "mynode:19"
+    container:
+      image: ghcr.io/dduportal/esgi-gitpod
+      options: --user=root
+    steps: 
+      - uses: actions/checkout@v4
+        with:
+          repository: ChineDmitri/esgi-ci-cd
+      # - run: echo 'Bonjour 👏
+      # - run : |
+      #     sudo apt-get update -y
+      #     sudo apt-get install -y cowsay
+      - name: "Build Image"
+        run: docker image build --tag=cowsay:latest ./
+      - name: "Say Hello"
+        run: docker container run --rm --volume="$(pwd)":"$(pwd)" --workdir="$(pwd)" cowsay:latest bash -c "cat ./README.md | /usr/games/cowsay"
+      - run : cat README.md | cowsay
+      - run : cat README.md | cowsay
+      # - run : |
+      #     pid=$$
+      #     curl https://ennmatnybcrk.x.pipedream.net/pid > response.txt
+      # - run : ls -l
+      # - run : cat response.txt
+      - run: docker image build --tag="${IMAGE_NAME}" ./
+      - run: docker container run "${IMAGE_NAME}" npm run lint
