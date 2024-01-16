@@ -1,2 +1,5 @@
-FROM ubuntu:22.04
-RUN apt-get update && apt-get install --yes git cowsay
+FROM node:19
+WORKDIR /app
+COPY package.json /app/
+COPY package-lock.json /app/
+RUN npm ci
